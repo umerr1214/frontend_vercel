@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Classifier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍎 Fruit Classifier</h1>
+            <p>Upload an image of a fruit and let AI identify it!</p>
+        </header>
+
+        <main>
+            <div class="upload-container">
+                <div class="upload-area" id="dropZone">
+                    <img id="preview" class="hidden">
+                    <div class="upload-text" id="uploadText">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p>Drag & Drop your image here or <span class="browse-text">Browse</span></p>
+                    </div>
+                    <input type="file" id="fileInput" accept="image/*" class="hidden">
+                </div>
+                <button id="classifyBtn" class="hidden">Classify Fruit</button>
+            </div>
+
+            <div id="result" class="result hidden">
+                <h2>Result</h2>
+                <div class="result-content">
+                    <p>Predicted Fruit: <span id="predictedFruit">-</span></p>
+                    <p>Confidence: <span id="confidence">-</span></p>
+                </div>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Analyzing image...</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made with ❤️ using TensorFlow and Flask</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
