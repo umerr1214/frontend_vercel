@@ -4,12 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const preview = document.getElementById('preview');
     const uploadText = document.getElementById('uploadText');
     const classifyBtn = document.getElementById('classifyBtn');
+    const resetBtn = document.getElementById('resetBtn');
     const result = document.getElementById('result');
     const predictedFruit = document.getElementById('predictedFruit');
     const confidence = document.getElementById('confidence');
     const loading = document.getElementById('loading');
 
-    // API endpoint (update this with your Railway backend URL)
+    // API endpoint
     const API_URL = 'https://backendrailway-production-e7ec.up.railway.app';
 
     // Handle drag and drop
@@ -37,6 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
         handleFile(e.target.files[0]);
     });
 
+    // Reset the form
+    resetBtn.addEventListener('click', () => {
+        preview.classList.add('hidden');
+        preview.src = '';
+        uploadText.classList.remove('hidden');
+        classifyBtn.classList.add('hidden');
+        resetBtn.classList.add('hidden');
+        result.classList.add('hidden');
+        classifyBtn.file = null;
+    });
+
     // Handle file selection
     function handleFile(file) {
         if (!file) return;
@@ -54,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             preview.classList.remove('hidden');
             uploadText.classList.add('hidden');
             classifyBtn.classList.remove('hidden');
+            resetBtn.classList.remove('hidden');
         };
         reader.readAsDataURL(file);
 
@@ -70,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loading.classList.remove('hidden');
             result.classList.add('hidden');
             classifyBtn.disabled = true;
+            resetBtn.disabled = true;
 
             // Prepare form data
             const formData = new FormData();
@@ -97,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } finally {
             loading.classList.add('hidden');
             classifyBtn.disabled = false;
+            resetBtn.disabled = false;
         }
     });
 }); 

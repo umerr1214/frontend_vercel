@@ -32,15 +32,17 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     animation: fadeIn 0.8s ease-out;
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-family: 'Righteous', cursive;
+    font-size: 3rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
     font-weight: 700;
+    letter-spacing: 2px;
 }
 
 header p {
@@ -53,6 +55,50 @@ main {
     animation: slideUp 0.8s ease-out;
 }
 
+.steps-container {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.steps-container h2 {
+    font-family: 'Righteous', cursive;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
 .upload-container {
     display: flex;
     flex-direction: column;
@@ -62,8 +108,8 @@ main {
 
 .upload-area {
     width: 100%;
-    max-width: 500px;
-    height: 300px;
+    max-width: 400px;
+    height: 200px;
     border: 2px dashed var(--primary-color);
     border-radius: 16px;
     display: flex;
@@ -92,6 +138,8 @@ main {
     margin-bottom: 1rem;
     color: var(--primary-color);
     transition: transform 0.3s ease;
+    width: 40px;
+    height: 40px;
 }
 
 .upload-area:hover .upload-text svg {
@@ -116,10 +164,16 @@ main {
     border-radius: 12px;
 }
 
-#classifyBtn {
-    padding: 1rem 2.5rem;
+.button-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#classifyBtn, #resetBtn {
+    padding: 0.8rem 1.5rem;
     font-size: 1.1rem;
-    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 12px;
@@ -129,13 +183,28 @@ main {
     box-shadow: 0 4px 6px var(--shadow-color);
 }
 
-#classifyBtn:hover {
-    background-color: var(--primary-hover);
+#classifyBtn {
+    background-color: var(--primary-color);
+}
+
+#resetBtn {
+    background-color: #64748b;
+}
+
+#classifyBtn:hover, #resetBtn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 12px var(--shadow-color);
 }
 
-#classifyBtn:disabled {
+#classifyBtn:hover {
+    background-color: var(--primary-hover);
+}
+
+#resetBtn:hover {
+    background-color: #475569;
+}
+
+#classifyBtn:disabled, #resetBtn:disabled {
     opacity: 0.7;
     cursor: not-allowed;
     transform: none;
@@ -151,6 +220,7 @@ main {
 }
 
 .result h2 {
+    font-family: 'Righteous', cursive;
     color: var(--primary-color);
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
@@ -227,18 +297,24 @@ footer {
     }
 
     header h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .upload-area {
-        height: 250px;
+        height: 180px;
     }
 
-    #classifyBtn {
-        padding: 0.8rem 2rem;
+    .steps {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .result {
-        padding: 1.5rem;
+    .step {
+        min-width: 100%;
     }
+
+    #classifyBtn, #resetBtn {
+        width: 100%;
+    }
+} 
 } 
