@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Fruit Classifier</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">🏠 Home</a>
+            <a href="about.html" class="nav-link active">ℹ️ About</a>
+        </nav>
+
+        <header>
+            <h1>About The Project</h1>
+            <p>Deep dive into the technical details of our Fruit Classification AI</p>
+        </header>
+
+        <main class="about-content">
+            <section class="info-card project-overview">
+                <h2>🌟 Why teach a computer to identify fruits?</h2>
+                <p>Imagine walking into a smart grocery store where you can simply place a fruit on the counter, and the system instantly identifies it, calculates the price, and adds it to your cart. Or picture a health app that can track your fruit intake by just snapping a photo of your meal. These aren't just futuristic concepts - they're becoming reality with AI-powered fruit recognition systems like ours. Following are some of the real-world applications for out fruit classifier: </p>
+                <div class="use-cases">
+                    <div class="use-case">
+                        <h3>🛒 Smart Checkout Systems</h3>
+                        <p>Streamline grocery shopping with automated fruit identification and pricing, reducing checkout times and human error.</p>
+                    </div>
+                    <div class="use-case">
+                        <h3>🥗 Health Tracking</h3>
+                        <p>Enable automatic logging of fruit consumption in diet apps, making nutrition tracking effortless and accurate.</p>
+                    </div>
+                    <div class="use-case">
+                        <h3>🌾 Agricultural Sorting</h3>
+                        <p>Automate fruit sorting processes in agricultural facilities, improving efficiency and reducing labor costs.</p>
+                    </div>
+                    <div class="use-case">
+                        <h3>📱 Educational Tools</h3>
+                        <p>Help children learn about fruits through interactive experiences, making nutrition education fun and engaging with real-time fruit identification.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-card model-details">
+                <h2>🧠 The Model</h2>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <h3>Architecture</h3>
+                        <p>We utilized MobileNetV2 with transfer learning for efficient image classification:</p>
+                        <ul>
+                            <li>Base: MobileNetV2 (pre-trained on ImageNet)</li>
+                            <li>Input shape: 224×224×3</li>
+                            <li>Global Average Pooling 2D</li>
+                            <li>Dense layer (128 units, ReLU)</li>
+                            <li>Output layer (Softmax)</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Training Process</h3>
+                        <p>The model was trained with the following specifications:</p>
+                        <ul>
+                            <li>Input image size: 224x224 pixels</li>
+                            <li>Batch size: 32</li>
+                            <li>Training epochs: 10</li>
+                            <li>Optimizer: Adam</li>
+                            <li>Loss: Categorical Cross-entropy</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Data Augmentation</h3>
+                        <p>To improve model robustness, we applied these preprocessing techniques:</p>
+                        <ul>
+                            <li>Image rescaling (1/255)</li>
+                            <li>Random rotation (±20°)</li>
+                            <li>Width shifts (±20%)</li>
+                            <li>Height shifts (±20%)</li>
+                            <li>Horizontal flipping</li>
+                            <li>Nearest neighbor fill mode</li>
+                        </ul>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Supported Fruits</h3>
+                        <p>Our model can accurately classify these fruits:</p>
+                        <ul class="fruits-list">
+                            <li>🍎 Apple</li>
+                            <li>🍌 Banana</li>
+                            <li>🫐 Blueberry</li>
+                            <li>🥭 Guava</li>
+                            <li>🥭 Mango</li>
+                            <li>🍊 Orange</li>
+                            <li>🍑 Peach</li>
+                            <li>🍍 Pineapple</li>
+                            <li>🍓 Strawberry</li>
+                            <li>🍉 Watermelon</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-card tech-stack">
+                <h2>⚡ Tech Stack</h2>
+                <div class="stack-container">
+                    <div class="stack-item">
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li>HTML5, CSS3, JavaScript</li>
+                            <li>Modern animations & transitions</li>
+                            <li>Responsive design</li>
+                            <li>Deployed on Vercel</li>
+                        </ul>
+                    </div>
+                    <div class="stack-item">
+                        <h3>Backend</h3>
+                        <ul>
+                            <li>Flask REST API</li>
+                            <li>TensorFlow 2.x & Keras</li>
+                            <li>Python 3.10</li>
+                            <li>Deployed on Railway</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer></footer>
+    </div>
+</body>
+</html> 
